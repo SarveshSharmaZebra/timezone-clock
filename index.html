@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Digital clock showing current time in multiple time zones with 12/24‑hour toggle." />
+  <meta name="theme-color" content="#0b0f14" />
+  <title>Multi‑Time Zone Digital Clock</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Multi‑Time Zone Digital Clock</h1>
+    <div class="controls">
+      <label class="toggle">
+        <input type="checkbox" id="toggle24h" />
+        <span>24‑hour</span>
+      </label>
+      <form id="addZoneForm" class="add-zone" autocomplete="off">
+        <input id="zoneInput" list="tzList" placeholder="Add time zone (e.g., Europe/Paris)" aria-label="Time zone" />
+        <datalist id="tzList">
+          <option value="UTC"></option>
+          <option value="America/Los_Angeles"></option>
+          <option value="America/Denver"></option>
+          <option value="America/Chicago"></option>
+          <option value="America/New_York"></option>
+          <option value="Europe/London"></option>
+          <option value="Europe/Berlin"></option>
+          <option value="Europe/Paris"></option>
+          <option value="Europe/Madrid"></option>
+          <option value="Europe/Rome"></option>
+          <option value="Europe/Moscow"></option>
+          <option value="Africa/Johannesburg"></option>
+          <option value="Asia/Dubai"></option>
+          <option value="Asia/Karachi"></option>
+          <option value="Asia/Kolkata"></option>
+          <option value="Asia/Dhaka"></option>
+          <option value="Asia/Bangkok"></option>
+          <option value="Asia/Singapore"></option>
+          <option value="Asia/Hong_Kong"></option>
+          <option value="Asia/Tokyo"></option>
+          <option value="Asia/Seoul"></option>
+          <option value="Australia/Perth"></option>
+          <option value="Australia/Sydney"></option>
+          <option value="Pacific/Auckland"></option>
+          <option value="America/Sao_Paulo"></option>
+          <option value="America/Mexico_City"></option>
+          <option value="America/Toronto"></option>
+          <option value="America/Vancouver"></option>
+        </datalist>
+        <button type="submit" title="Add time zone">Add</button>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <section id="clocks" class="clocks-grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="app-footer">
+    <small>
+      Tip: You can type any valid IANA time zone (e.g., Europe/Rome, America/Phoenix).
+      Your local time zone is detected automatically.
+    </small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
